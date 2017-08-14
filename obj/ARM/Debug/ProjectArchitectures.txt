@@ -1,0 +1,1 @@
+C:\Users\Дом\documents\visual studio 2015\Projects\Notify\Notify\Notify.csproj;arm

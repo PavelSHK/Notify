@@ -49,20 +49,20 @@ namespace Notify
         {
             var deferral = args.TaskInstance.GetDeferral();
 
-            switch (args.TaskInstance.Task.Name)
-            {
-                case "UserNotificationChanged":
-                    // Call your own method to process the new/removed notifications
-                    // The next section of documentation discusses this code
+            //switch (args.TaskInstance.Task.Name)
+            //{
+            //    case "UserNotificationChanged":
+            //        // Call your own method to process the new/removed notifications
+            //        // The next section of documentation discusses this code
 
-                    System.Diagnostics.Debug.WriteLine("Уведомление получено");
+            //        System.Diagnostics.Debug.WriteLine("Уведомление получено");
 
-                    MainPage.torchControl.Enabled = true;
-                    await Task.Delay(100);
-                    MainPage.torchControl.Enabled = false;
+            //        MainPage.torchControl.Enabled = true;
+            //        await Task.Delay(100);
+            //        MainPage.torchControl.Enabled = false;
 
-                    break;
-            }
+            //        break;
+            //}
 
             deferral.Complete();
         }

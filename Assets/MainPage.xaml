@@ -1,0 +1,26 @@
+﻿<Page
+    x:Class="Notify.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Notify"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        
+        <TextBlock x:Name="Status" x:FieldModifier="Public"/>
+        <ListView x:Name="NotificationsList" Height="300">
+            <ListView.Header>
+                <TextBlock Text="Список уведомлений:" Margin="10"/>
+            </ListView.Header>
+        </ListView>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <Button x:Name="Torch" Content="Включить вспышку" HorizontalAlignment="Center" Click="Torch_Click"/>
+            <Button x:Name="GetList" Content="Получить список уведомлений" HorizontalAlignment="Center" Click="GetList_Click"/>
+            <Button x:Name="ClearAll" Content="Очистить уведомления" HorizontalAlignment="Center" Click="ClearAll_Click"/>
+            <Button x:Name="SendToast" Content="Отправить уведомление" HorizontalAlignment="Center" Click="SendToast_Click"/>
+            <Button x:Name="Background" Content="Зарегистрировать фоновую задачу" HorizontalAlignment="Center" Click="Background_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
