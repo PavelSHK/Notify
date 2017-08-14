@@ -1,1 +1,1 @@
-C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\Notify\Notify.csproj;x64
+C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\Notify.csproj;x64

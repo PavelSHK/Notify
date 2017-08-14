@@ -26,5 +26,21 @@ namespace Notify.View
         {
             this.InitializeComponent();
         }
+
+        private void OnBack(object sender, RoutedEventArgs e)
+        {
+            if (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+            }
+        }
+
+        private void HeaderControl_ValueChanged(object sender, EventArgs e)
+        {
+            if (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+            }
+        }
     }
 }

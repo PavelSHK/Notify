@@ -5,39 +5,53 @@
     xmlns:local="using:Notify.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Notify.Controls"
     mc:Ignorable="d">
-
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                    <EntranceNavigationTransitionInfo/>
+                </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid Height="60">
-            <TextBlock x:Name="TitleApp"
-                   Text="Настройки" 
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"
-                   Foreground="{ThemeResource SystemControlForegroundAccentBrush}"
-                   FontSize="20"
-                   FontWeight="SemiBold"
-                   />
-        </Grid>
-        
-        <StackPanel Grid.Row="1">
-            <StackPanel>
-                <TextBlock Margin="10" TextWrapping="Wrap" Text="Приобритите PRO-версию, чтобы получить доступ к расширенным настройкам."/>
-                <Button Margin="10" HorizontalAlignment="Center" Content="Приобрести"/>
-            </StackPanel>
-            <Border Margin="0,10,0,10" Height="2" Background="#FF303030"/>
-            <StackPanel>
-                <TextBlock Margin="20,0,20,0" TextWrapping="Wrap" Text="Количество сигналов - 0"/>
-                <Slider Maximum="5" TickFrequency="1" TickPlacement="TopLeft" Margin="20,10,20,10"/>
-            </StackPanel>
-            <StackPanel>
-                <TextBlock Margin="20,0,20,0" TextWrapping="Wrap" Text="Длительность одного сигнала (сек) - 0"/>
-                <Slider TickFrequency="20" TickPlacement="TopLeft" Margin="20,10,20,10"/>
-            </StackPanel>
 
-        </StackPanel>
+        <controls:HeaderControl Label="Настройки" Height="60" ValueChanged="HeaderControl_ValueChanged"/>
+        <ScrollViewer Grid.Row="1" VerticalScrollMode="Auto">
+            <StackPanel>
+                <StackPanel Margin="0,10,0,0">
+                    <TextBlock Margin="15" TextWrapping="Wrap" Text="Приобритите PRO-версию, чтобы получить доступ к расширенным настройкам."/>
+                    <Button Margin="10" HorizontalAlignment="Center" Content="Приобрести"/>
+                </StackPanel>
+                <Border Margin="0,10,0,10" Height="2" Background="#FF303030"/>
+                <ToggleSwitch   Header="Проверка вспышки"
+                              Margin="20,10,20,10" Style="{StaticResource ToggleSwitchStyle}"
+                              
+                           />
+                <StackPanel>
+                    <TextBlock Margin="20,0,20,0" TextWrapping="Wrap">
+                    <Run Text="Количество сигналов - "/>
+                    <Run Text="{Binding ElementName=TickCount, Path=Value, Mode=TwoWay}"/>
+                    </TextBlock>
+                    <Slider x:Name="TickCount" Foreground="{StaticResource AppColor}" Maximum="5" TickFrequency="1" TickPlacement="TopLeft" Margin="20,10,20,10" Style="{StaticResource SliderStyle}"/>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Margin="20,0,20,0" TextWrapping="Wrap" Text="Длительность одного сигнала (сек) - 0"/>
+                    <Slider TickFrequency="20" Foreground="{StaticResource AppColor}"  TickPlacement="TopLeft" Margin="20,10,20,10" Style="{StaticResource SliderStyle}"/>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Margin="20,0,20,0" TextWrapping="Wrap" Text="Время между сигналами - 0"/>
+                    <Slider TickFrequency="20" Foreground="{StaticResource AppColor}"  TickPlacement="TopLeft" Margin="20,10,20,10" Style="{StaticResource SliderStyle}"/>
+                </StackPanel>
+                <ComboBox Header="Язык интерфейса" PlaceholderText="Русский" Margin="20,10,20,0"/>
+            </StackPanel> 
+        </ScrollViewer>
+        
     </Grid>
 </Page>

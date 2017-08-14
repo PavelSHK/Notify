@@ -15775,10 +15775,10 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\astri\\Documents\\Visual Studio 2017\\Projects\\Notify\\Notify\\Notify.csproj",
+      "projectUniqueName": "C:\\Users\\astri\\Documents\\Visual Studio 2017\\Projects\\Notify\\Notify.csproj",
       "projectName": "Notify",
-      "projectPath": "C:\\Users\\astri\\Documents\\Visual Studio 2017\\Projects\\Notify\\Notify\\Notify.csproj",
-      "projectJsonPath": "C:\\Users\\astri\\Documents\\Visual Studio 2017\\Projects\\Notify\\Notify\\project.json",
+      "projectPath": "C:\\Users\\astri\\Documents\\Visual Studio 2017\\Projects\\Notify\\Notify.csproj",
+      "projectJsonPath": "C:\\Users\\astri\\Documents\\Visual Studio 2017\\Projects\\Notify\\project.json",
       "projectStyle": "ProjectJson"
     },
     "dependencies": {

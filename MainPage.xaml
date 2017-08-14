@@ -7,31 +7,82 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:toolkit="using:WinRTXamlToolkit.Controls"
     mc:Ignorable="d">
-
+    <Page.Resources>
+        <Storyboard x:Name="TextShow">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="Status">
+                <EasingDoubleKeyFrame KeyTime="0" Value="20"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Status">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="IconChange">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="fontIcon">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FontIcon.Glyph)" Storyboard.TargetName="fontIcon">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="&#xE7E8;"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="&#xE081;"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="&#xE081;"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+    </Page.Resources>
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                    <EntranceNavigationTransitionInfo/>
+                </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
     <Grid Background="Black">
+        <StackPanel VerticalAlignment="Center" Orientation="Vertical">
+
+            <Button VerticalAlignment="Center" Background="{StaticResource AppColor}" HorizontalAlignment="Center" Height="150" Width="150" Style="{StaticResource RoundButtonStyle}" Click="SetTask">
+                <FontIcon x:Name="fontIcon" Glyph="" FontSize="40" FontWeight="SemiBold" Foreground="White"/>
+            </Button>
+            <TextBlock x:Name="Status" VerticalAlignment="Center" Margin="30,30,30,0"
+                   TextWrapping="Wrap"
+                   Text="Нажмите на кнопку, чтобы начать"
+                   TextAlignment="Center"
+                   FontSize="16" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <CompositeTransform/>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <ProgressRing x:Name="Ring"
+                          Height="50"
+                          Width="50"
+                          Margin="0,50,0,0"
+                          Foreground="{StaticResource AppColor}"
+                          Background="Transparent"/>
+        </StackPanel>
         <TextBlock x:Name="TitleApp"
                    Text="TITLE" 
                    VerticalAlignment="Top"
                    HorizontalAlignment="Center"
-                   Foreground="{ThemeResource SystemControlForegroundAccentBrush}"
+                   Foreground="{StaticResource AppColor}"
                    FontSize="22"
                    FontWeight="SemiBold"
                    Margin="20"/>
 
-        <Button VerticalAlignment="Center" Background="{ThemeResource SystemControlForegroundAccentBrush}" HorizontalAlignment="Center" Height="200" Width="200" Style="{StaticResource RoundButtonStyle}" Click="Button_Click">
-            <FontIcon Glyph="" FontSize="40"/>
-        </Button>
-        
+
         <Button x:Name="Settings" 
                 HorizontalAlignment="Right"
                 Style="{StaticResource BottomButtonStyle}"
-                Click="Settings_Click">
-            <FontIcon Glyph="&#xE713;" FontSize="22" FontWeight="SemiBold"/>
+                Click="OnSettings">
+            <FontIcon Glyph="&#xE713;" FontSize="22"/>
         </Button>
         <Button x:Name="Help"                 
                 HorizontalAlignment="Left"
-                Style="{StaticResource BottomButtonStyle}">
-            <FontIcon Glyph=""  FontSize="22" FontWeight="SemiBold"/>
+                Style="{StaticResource BottomButtonStyle}"
+                Click="OnAbout">
+            <FontIcon Glyph=""  FontSize="22"/>
         </Button>
     </Grid>
 </Page>

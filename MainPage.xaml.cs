@@ -1,41 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel.Background;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.Foundation.Metadata;
 using Windows.Media.Devices;
 using Windows.UI.Notifications;
 using Windows.UI.Notifications.Management;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-
-// Документацию по шаблону элемента "Пустая страница" см. по адресу https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace Notify
 {
-    /// <summary>
-    /// Пустая страница, которую можно использовать саму по себе или для перехода внутри фрейма.
-    /// </summary>
     public sealed partial class MainPage : Page
     {
         UserNotificationListener listener;
         public static TorchControl torchControl;
+        public static Frame frame;
 
         public MainPage()
         {
             this.InitializeComponent();
 
-            Initialize();
+            this.NavigationCacheMode = NavigationCacheMode.Required;
+
+            frame = this.Frame;
         }
 
         public void Initialize()
@@ -43,9 +32,11 @@ namespace Notify
             if (ApiInformation.IsTypePresent("Windows.UI.Notifications.Management.UserNotificationListener"))
             {
                 Debug.WriteLine("API уведомлений поддерживаются");
+                StatusUpdate("Выполняется настройка");
                 SetListener();
-           }
-            else Debug.WriteLine("API уведомлений не поддежриваются");
+                Ring.IsActive = true;
+            }
+            else StatusUpdate("API не поддерживается");
         }
 
         public async void SetListener()
@@ -59,12 +50,16 @@ namespace Notify
                 case UserNotificationListenerAccessStatus.Allowed:
                     GetAccessBackgroundTask();
                     Debug.WriteLine("Уведомления доступны");
+                    
                     break;
                 case UserNotificationListenerAccessStatus.Denied:
-                    Debug.WriteLine("Уведомления недоступны");
+                    StatusUpdate("Уведомления недоступны. Откройте");
                     break;
                 case UserNotificationListenerAccessStatus.Unspecified:
                     Debug.WriteLine("Неизвестно");
+                    break;
+                default:
+                    Status.Text = "Уведомления недоступны";
                     break;
             }
         }
@@ -86,7 +81,10 @@ namespace Notify
                     Debug.WriteLine("Фоновые задачи отключены или недоступны");
                     break;
                 case BackgroundAccessStatus.DeniedByUser:
-                    Debug.WriteLine("Фоновые задачи отключены пользователем");
+                    Status.Text = "Фоновые задачи недоступны";
+                    break;
+                default:
+                    Status.Text = "Фоновые задачи недоступны";
                     break;
             }
         }
@@ -104,20 +102,35 @@ namespace Notify
                 Debug.WriteLine("Триггер установлен");
                 builder.Register();
                 Debug.WriteLine("Задача зарегистрирована");
+                IconChange.Begin();
             }
 
 
         }
 
 
-        private void Settings_Click(object sender, RoutedEventArgs e)
+        private void OnSettings(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(View.Settings));
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void OnAbout(object sender, RoutedEventArgs e)
         {
+            Frame.Navigate(typeof(View.About));
+        }
 
+        private void SetTask(object sender, RoutedEventArgs e)
+        {
+            Initialize();
+        }
+
+        private void StatusUpdate(string message)
+        {
+            TextShow.Begin();
+            Status.Text = message;
+
+            
+          
         }
     }
 }

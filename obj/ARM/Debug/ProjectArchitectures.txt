@@ -1,1 +1,1 @@
-C:\Users\Дом\documents\visual studio 2015\Projects\Notify\Notify\Notify.csproj;arm
+C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\Notify.csproj;arm

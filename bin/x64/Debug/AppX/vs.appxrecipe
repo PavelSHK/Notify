@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>DESKTOP-8VPRLKS</Machine>
-    <WindowsUser>Павел</WindowsUser>
+    <Machine>DESKTOP-JCGEHFV</Machine>
+    <WindowsUser>astri</WindowsUser>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetOsVersion>10.0</TargetOsVersion>
     <TargetOsDescription>Windows 10.0</TargetOsDescription>
@@ -10,7 +10,7 @@
     <PackageArchitecture>x64</PackageArchitecture>
     <PackageIdentityName>74581901-607f-4187-8658-10c02b1896c6</PackageIdentityName>
     <PackageIdentityPublisher>CN=Home</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\Notify\obj\x64\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\obj\x64\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -18,7 +18,7 @@
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\Notify\bin\x64\Debug\AppX</LayoutDir>
+    <LayoutDir>C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\bin\x64\Debug\AppX</LayoutDir>
     <RegisteredManifestChecksum>562738395ED2E0037A217D9AEC609891C85145A7B193FD8E23271D0F7822761D</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>74581901-607f-4187-8658-10c02b1896c6_1.0.0.0_x64__2xgss9s9ewh1t</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>74581901-607f-4187-8658-10c02b1896c6_2xgss9s9ewh1t!App</RegisteredUserModeAppID>
@@ -28,16 +28,16 @@
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\Notify\bin\x64\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-11T11:16:07.634</Modified>
+      <Modified>2017-08-14T20:03:07.672</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\Notify\bin\x64\Debug\Notify.exe">
+    <AppxPackagedFile Include="C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\bin\x64\Debug\Notify.exe">
       <PackagePath>entrypoint\Notify.exe</PackagePath>
-      <Modified>2017-08-11T11:16:06.337</Modified>
+      <Modified>2017-08-14T20:03:05.845</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\astri\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -455,51 +455,51 @@
       <PackagePath>WinRTXamlToolkit.Controls.Gauge.dll</PackagePath>
       <Modified>2017-02-12T09:18:56.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\Notify\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2017-07-10T09:40:46.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\Notify\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
       <Modified>2016-02-15T17:32:56.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\Notify\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2016-02-15T17:32:56.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\Notify\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2016-02-15T17:32:56.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\Notify\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2016-02-15T17:32:56.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\Notify\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2016-02-15T17:32:56.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\Notify\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2016-02-15T17:32:56.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\Notify\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2016-02-15T17:32:56.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\Notify\bin\x64\Debug\Notify.xr.xml">
+    <AppxPackagedFile Include="C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\bin\x64\Debug\Notify.xr.xml">
       <PackagePath>Notify.xr.xml</PackagePath>
-      <Modified>2017-08-11T09:35:03.209</Modified>
+      <Modified>2017-08-14T19:58:42.545</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
-      <Modified>2017-07-21T19:23:25.312</Modified>
+      <Modified>2017-08-13T15:25:32.876</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\astri\.nuget\packages\WinRTXamlToolkit.Controls.Gauge\2.3.0\lib\uap10.0\WinRTXamlToolkit.Controls.Gauge\WinRTXamlToolkit.Controls.Gauge.xr.xml">
       <PackagePath>WinRTXamlToolkit.Controls.Gauge\WinRTXamlToolkit.Controls.Gauge.xr.xml</PackagePath>
@@ -509,14 +509,14 @@
       <PackagePath>WinRTXamlToolkit.Controls.Gauge\Properties\WinRTXamlToolkit.Controls.Gauge.UWP.rd.xml</PackagePath>
       <Modified>2017-02-12T09:18:56.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\Notify\bin\x64\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\bin\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-11T11:16:07.120</Modified>
+      <Modified>2017-08-14T20:03:06.573</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\Notify\bin\x64\Debug\Core\Notify.exe">
+    <AppxPackagedFile Include="C:\Users\astri\Documents\Visual Studio 2017\Projects\Notify\bin\x64\Debug\Core\Notify.exe">
       <PackagePath>Notify.exe</PackagePath>
-      <Modified>2017-08-11T11:16:07.626</Modified>
+      <Modified>2017-08-14T20:03:07.655</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

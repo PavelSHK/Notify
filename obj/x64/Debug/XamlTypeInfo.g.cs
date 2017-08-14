@@ -156,19 +156,23 @@ namespace Notify.Notify_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[5];
-            _typeNameTable[0] = "Notify.MainPage";
-            _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "Notify.View.About";
-            _typeNameTable[4] = "Notify.View.Settings";
+            _typeNameTable = new string[7];
+            _typeNameTable[0] = "Notify.Controls.HeaderControl";
+            _typeNameTable[1] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[2] = "String";
+            _typeNameTable[3] = "Notify.MainPage";
+            _typeNameTable[4] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[5] = "Notify.View.About";
+            _typeNameTable[6] = "Notify.View.Settings";
 
-            _typeTable = new global::System.Type[5];
-            _typeTable[0] = typeof(global::Notify.MainPage);
-            _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::Notify.View.About);
-            _typeTable[4] = typeof(global::Notify.View.Settings);
+            _typeTable = new global::System.Type[7];
+            _typeTable[0] = typeof(global::Notify.Controls.HeaderControl);
+            _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[2] = typeof(global::System.String);
+            _typeTable[3] = typeof(global::Notify.MainPage);
+            _typeTable[4] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[5] = typeof(global::Notify.View.About);
+            _typeTable[6] = typeof(global::Notify.View.Settings);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -203,9 +207,10 @@ namespace Notify.Notify_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_MainPage() { return new global::Notify.MainPage(); }
-        private object Activate_3_About() { return new global::Notify.View.About(); }
-        private object Activate_4_Settings() { return new global::Notify.View.Settings(); }
+        private object Activate_0_HeaderControl() { return new global::Notify.Controls.HeaderControl(); }
+        private object Activate_3_MainPage() { return new global::Notify.MainPage(); }
+        private object Activate_5_About() { return new global::Notify.View.About(); }
+        private object Activate_6_Settings() { return new global::Notify.View.Settings(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -217,31 +222,43 @@ namespace Notify.Notify_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  Notify.MainPage
-                userType = new global::Notify.Notify_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_MainPage;
+            case 0:   //  Notify.Controls.HeaderControl
+                userType = new global::Notify.Notify_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
+                userType.Activator = Activate_0_HeaderControl;
+                userType.AddMemberName("Label");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 1:   //  Windows.UI.Xaml.Controls.Page
+            case 1:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::Notify.Notify_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 2:   //  Windows.UI.Xaml.Controls.UserControl
+            case 2:   //  String
                 xamlType = new global::Notify.Notify_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  Notify.View.About
+            case 3:   //  Notify.MainPage
                 userType = new global::Notify.Notify_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_3_About;
+                userType.Activator = Activate_3_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 4:   //  Notify.View.Settings
+            case 4:   //  Windows.UI.Xaml.Controls.Page
+                xamlType = new global::Notify.Notify_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 5:   //  Notify.View.About
                 userType = new global::Notify.Notify_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_4_Settings;
+                userType.Activator = Activate_5_About;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 6:   //  Notify.View.Settings
+                userType = new global::Notify.Notify_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_6_Settings;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -304,11 +321,32 @@ namespace Notify.Notify_XamlTypeInfo
             return foundXamlType;
         }
 
+        private object get_0_HeaderControl_Label(object instance)
+        {
+            var that = (global::Notify.Controls.HeaderControl)instance;
+            return that.Label;
+        }
+        private void set_0_HeaderControl_Label(object instance, object Value)
+        {
+            var that = (global::Notify.Controls.HeaderControl)instance;
+            that.Label = (global::System.String)Value;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
             global::Notify.Notify_XamlTypeInfo.XamlMember xamlMember = null;
-            // No Local Properties
+            global::Notify.Notify_XamlTypeInfo.XamlUserType userType;
+
+            switch (longMemberName)
+            {
+            case "Notify.Controls.HeaderControl.Label":
+                userType = (global::Notify.Notify_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Notify.Controls.HeaderControl");
+                xamlMember = new global::Notify.Notify_XamlTypeInfo.XamlMember(this, "Label", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_0_HeaderControl_Label;
+                xamlMember.Setter = set_0_HeaderControl_Label;
+                break;
+            }
             return xamlMember;
         }
     }
